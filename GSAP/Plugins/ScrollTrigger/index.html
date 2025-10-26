@@ -18,8 +18,43 @@
 
 
 body {
-    background:  #211038;
   
+  
+}
+
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+align-items: center;
+
+  .box {
+    height: 80px;
+    width: 80px;
+   
+    border-radius: 10px;
+ background-color: orangered;
+   
+
+  }
+
+
+   &:nth-child(1)  {
+    background-color: rgb(52, 32, 5);
+  }
+    &:nth-child(3)  {
+      background-color: rgb(10, 27, 35);
+    } 
+
+  &:nth-child(2)  {
+    background-color: rgb(27, 35, 10);
+  }
+
+
+ 
+
+ 
 }
 
 
@@ -50,6 +85,29 @@ body {
   <body>
 
 <div class="container">
+
+  <div class=" a box" >
+   
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+  <div class="box b" >
+   
+  </div> 
+
+</div>
+
+
+<div class="container">
+
+  <div class="box c" >
+   
+  </div> 
 
 </div>
 

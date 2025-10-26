@@ -1,38 +1,46 @@
-//Timelines are the key to creating easily adjustable, resilient sequences of animations. When you add tweens to a timeline, by default they'll play one-after-another in the order they were added.
+gsap.registerPlugin(ScrollTrigger);
 
-const container = document.querySelector(".container");
+// gsap.to(".b", {
+//   scrollTrigger: {
+//     trigger: ".b",
 
-Array.from({ length: 10 }).map((_, index) => {
-  const box = document.createElement("div");
-  box.classList.add("box");
-  container.appendChild(box);
-});
+//     start: "top center",
 
-Array.from({ length: 10 }).map((_, index) => {
-  const box = document.createElement("div");
-  box.classList.add("box2");
-  container.appendChild(box);
-});
+//     toggleActions: "restart pause resume play",
+//   },
+//   x: 200,
+
+//   duration: 2,
+//   rotation: 360,
+// });
+
+//This animation is applied on the Box with class c when I scroll to that box
+
+//Adding ScrollTrigger to a Timeline
 
 let tl = gsap.timeline({
-  defaults: {
-    y: 400,
-    duration: 1,
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
 
-    repeat: -1,
-    yoyo: true,
-    rotation: 360,
+    // markers: true,
   },
 });
 
-tl.to(".box", {}, "+1");
-tl.fromTo(
-  ".box2",
-  {
-    y: 300,
-  },
-  {
-    y: 0,
-    duration: 1,
-  }
-);
+tl.to(".a", {
+  x: 200,
+  duration: 2,
+  rotation: 360,
+});
+
+tl.to(".b", {
+  x: 200,
+  duration: 2,
+  rotation: 360,
+});
+
+tl.to(".c", {
+  x: 200,
+  duration: 2,
+  rotation: 360,
+});
