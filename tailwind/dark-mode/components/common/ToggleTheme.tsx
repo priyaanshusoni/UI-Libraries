@@ -2,28 +2,31 @@
 
 import React, { useEffect } from 'react'
 import { useState  } from 'react'
-
+import { ThemeProvider , useTheme  } from 'next-themes'
 const ToggleTheme = () => {
 
-    const [theme , setTheme] = useState('dark')
+    // const [theme , setTheme] = useState('dark')
  
 
 
 
-    useEffect(()=> {
+    // useEffect(()=> {
 
-        const currentTheme  = localStorage.setItem('theme', theme);
+    //     const currentTheme  = localStorage.setItem('theme', theme);
 
-        const html = document.documentElement;
-        const currentClassName = html.classList.value;
+    //     const html = document.documentElement;
+    //     const currentClassName = html.classList.value;
 
-        if(currentClassName === theme) return;
-        html.classList.replace(currentClassName , theme)
-        localStorage.setItem('theme', theme)
+    //     if(currentClassName === theme) return;
+    //     html.classList.replace(currentClassName , theme)
+    //     localStorage.setItem('theme', theme)
 
        
 
-    },[theme])
+    // },[theme])
+
+
+    const {theme , setTheme} = useTheme()
   return (
     <div>
 
@@ -38,6 +41,9 @@ const ToggleTheme = () => {
         <span onClick={()=> setTheme('dark')} className='cursor-pointer'>Switch to Dark Mode</span>
 
         </div>
+
+      
+      
 
 
     </div>
